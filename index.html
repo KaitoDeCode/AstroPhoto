@@ -17,6 +17,7 @@
         <link href="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.css" rel="stylesheet" />
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="css/styles.css" rel="stylesheet" />
+        <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     </head>
     <style>
 
@@ -168,6 +169,200 @@
 
 
 
+body {
+	font-family: "Poppins", sans-serif;
+	color: #444;
+	box-sizing: border-box;
+	margin: 0px;
+   
+}
+
+.container {
+	max-width: 1200px;
+	width: 100%;
+	padding: 0px 15px;
+	margin: auto;
+}
+
+/**Typeo CSS End**/
+.faq-title {
+	text-align: center;
+	font-size: 45px;
+	font-weight: normal;
+}
+
+.faq-group {
+	display: flex;
+	flex-flow: row wrap;
+	width: 100%;
+}
+
+.faq-group .faq-left {
+	width: 38%;
+}
+
+.faq-group .faq-right {
+	width: 58%;
+	border-left: #ccc 1px solid;
+	padding-left: 30px;
+	margin-left: 4%;
+}
+
+.faq-group h3 {
+	font-size: 24px;
+	font-weight: normal;
+	margin: 35px 0 15px 0;
+}
+
+.faq-group h3:first-child {
+	margin-top: 0px;
+}
+.faq-btns {
+ margin-bottom: 40px;
+}
+.faq-btn {
+	width: 100%;
+	display: inline-block;
+	border: #000 1px solid;
+	border-radius: 4px;
+	text-align: center;
+	margin: 10px 0;
+	background-color: #fff;
+	padding: 14px;
+	text-decoration: none;
+	color: #000;
+	transition: 0.5s all;
+}
+
+.faq-btn:hover {
+	background-color: #000;
+	color: #fff;
+}
+
+.faq-item {
+	width: 100%;
+	margin: 7px 0px;
+	border-bottom: #ebebeb 1px solid;
+}
+
+.faq-item .faq-label {
+	position: relative;
+	width: 100%;
+	padding: 12px 26px 12px 0px;
+	cursor: pointer;
+	font-size: 18px;
+	color: rgb(244, 98, 58);
+	user-select: none;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+}
+
+.faq-item .faq-label i {
+	width: 18px;
+	height: 100%;
+	position: absolute;
+	right: 0px;
+	top: 0px;
+}
+
+.faq-item .faq-label i:before {
+	content: '';
+	position: absolute;
+	left: 0px;
+	right: 0px;
+	top: 0px;
+	bottom: 0px;
+	margin: auto;
+	width: 18px;
+	height: 2px;
+	background-color: #ffffff;
+}
+
+.faq-item .faq-label i:after {
+	content: '';
+	position: absolute;
+	left: 0px;
+	right: 0px;
+	top: 0px;
+	bottom: 0px;
+	margin: auto;
+	width: 2px;
+	height: 18px;
+	background-color: #ffffff;
+	transition: 0.5s all;
+	-webkit-transition: 0.5s all;
+}
+
+.faq-item.faq-item-show .faq-label i:after {
+	opacity: 0;
+}
+
+.faq-cont {
+	transition: 0.3s all;
+	overflow: hidden;
+	height: 0px;
+}
+
+.faq-item.faq-item-show  .faq-cont {
+	display: block;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	overflow: auto;
+	height: auto;
+}
+
+.faq-cont p {
+	margin: 0px 0 20px 0;
+}
+
+.faq-cont p:last-child {
+	margin-bottom: 0px;
+}
+
+
+@media(max-width:992px) {
+	.faq-group .faq-left{
+  width: 100%;
+ }
+.faq-group .faq-right {
+ width: 100%;
+ border-left: none;
+ padding-left: 0;
+ margin-left: 0;
+}
+
+}	
+
+
+.card-service{
+    transition: 0.25s ease-in-out;
+    cursor: default;
+}
+
+.card-service i{
+    color: #f4623a;
+    transition: 0.25s ease-in-out;
+
+}   
+.card-service p{
+    color: #605d5c;
+    transition: 0.25s ease-in-out;
+
+}   
+
+.card-service:hover{
+    background-color: #f4623a;
+    color: white;
+}
+
+.card-service:hover  i{
+    color: white;
+}
+
+.card-service:hover  p{
+    color: rgb(206, 206, 206);
+}
+
 
     </style>
 
@@ -175,14 +370,14 @@
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3 bg-primary" id="mainNav">
             <div class="container px-4 px-lg-5">
-                <a class="navbar-brand" href="#page-top">AstroPhoto</a>
+                <a class="navbar-brand text-white"                                                                                                                                                         y  href="#page-top">AstroPhoto</a>
                 <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ms-auto my-2 my-lg-0">
-                        <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#portfolio">Portfolio</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                        <li class="nav-item"><a class="nav-link text-white" href="#about">About</a></li>
+                        <li class="nav-item"><a class="nav-link text-white" href="#services">Services</a></li>
+                        <li class="nav-item"><a class="nav-link text-white" href="#portfolio">Portfolio</a></li>
+                        <li class="nav-item"><a class="nav-link text-white" href="#contact">Contact</a></li>
                     </ul>
                 </div>
             </div>
@@ -220,159 +415,161 @@
             <div class="container px-4 px-lg-5">
                 <h2 class="text-center mt-0">At Your Service</h2>
                 <hr class="divider" />
-                <div class="row gx-4 gx-lg-5">
-                    <div class="col-lg-3 col-md-6 text-center">
-                        <div class="mt-5">
-                            <div class="mb-2"><i class="bi-gem fs-1 text-primary"></i></div>
-                            <h3 class="h4 mb-2">Foto Album</h3>
-                            <p class="text-muted mb-0">Melayani pembuatan buku album custom sesuai dengan keinginan anda</p>
+                <div class="row gx-4 gx-lg-5 align-items-center mt-5">
+                    <div data-aos="fade-up" class="col-lg-3 col-md-6 text-center">
+                        <div  class="card card-service">
+                            <div class="card-body">
+                                <div class="">
+                                <div class="mb-2"><i class="bi-gem fs-1 "></i></div>
+                                <h3 class="h4 mb-2">Foto Album</h3>
+                                <p class=" mb-0">Melayani pembuatan buku album custom sesuai dengan keinginan anda</p>
+                            </div>
+                        </div>
                         </div>
                     </div>
-                    <div class="col-lg-3 col-md-6 text-center">
-                        <div class="mt-5">
-                            <div class="mb-2"><i class="bi-laptop fs-1 text-primary"></i></div>
-                            <h3 class="h4 mb-2">Foto Prewedding</h3>
-                            <p class="text-muted mb-0">Foto prewedding dengan biaya terjangkau tetapi dengan kualitas profesional</p>
+                    <div data-aos="fade-up" data-aos-delay="300" class="col-lg-3 col-md-6 text-center">
+                        <div  class="card card-service">
+                            <div class="card-body">
+                                <div class="">
+                                    <div class="mb-2"><i class="bi-laptop fs-1 "></i></div>
+                                    <h3 class="h4 mb-2">Foto Prewedding</h3>
+                                    <p class=" mb-0">Foto prewedding dengan biaya terjangkau tetapi dengan kualitas profesional</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="col-lg-3 col-md-6 text-center">
-                        <div class="mt-5">
-                            <div class="mb-2"><i class="bi-globe fs-1 text-primary"></i></div>
-                            <h3 class="h4 mb-2">Cetak Foto</h3>
-                            <p class="text-muted mb-0">Melayani pengambilan foto dan pencetakan foto dengan kualitas terbaik</p>
+                    <div data-aos="fade-up" data-aos-delay="600" class="col-lg-3 col-md-6 text-center">
+                        <div  class="card card-service">
+                            <div class="card-body">
+                                <div class="">
+                                    <div class="mb-2"><i class="bi-globe fs-1 "></i></div>
+                                    <h3 class="h4 mb-2">Cetak Foto</h3>
+                                    <p class=" mb-0">Melayani pengambilan foto dan pencetakan foto dengan kualitas terbaik</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="col-lg-3 col-md-6 text-center">
-                        <div class="mt-5">
-                            <div class="mb-2"><i class="bi-heart fs-1 text-primary"></i></div>
-                            <h3 class="h4 mb-2">NewBorn</h3>
-                            <p class="text-muted mb-0">Melayani pengambilan foto untuk buah hati anda</p>
+                    <div data-aos="fade-up" data-aos-delay="900" class="col-lg-3 col-md-6 text-center">
+                        <div  class="card card-service">
+                            <div class="card-body">
+                                <div class="">
+                                    <div class="mb-2"><i class="bi-heart fs-1 "></i></div>
+                                    <h3 class="h4 mb-2">NewBorn</h3>
+                                    <p class=" mb-0">Melayani pengambilan foto berkualitas untuk buah hati anda tercinta</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
-        <!-- Portfolio-->
 
-        <div id="portfolio" class="mt-5">
-            <div class="container-fluid p-0">
-                <h2 class="text-center mt-0">Portfolio</h2>
-                <hr class="divider" />
-                <div class="row g-0">
-                    <div class="col-lg-4 col-sm-6">
-                        <a class="portfolio-box" href="img/wedding3.jpg" title="Project Name">
-                            <img class="img-fluid" src="img/wedding3.jpg" alt="..." />
-                            <div class="portfolio-box-caption">
-                               
-                                <div class="project-name">Prewedding</div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-lg-4 col-sm-6">
-                        <a class="portfolio-box" href="img/wedding4.jpg" title="Project Name">
-                            <img class="img-fluid" src="img/wedding4.jpg" alt="..." />
-                            <div class="portfolio-box-caption">
-                               
-                                <div class="project-name">Prewedding</div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-lg-4 col-sm-6">
-                        <a class="portfolio-box" href="img/wedding6.jpg" title="Project Name">
-                            <img class="img-fluid"  src="img/wedding6.jpg" alt="..." />
-                            <div class="portfolio-box-caption">
-                               
-                                <div class="project-name">Prewedding</div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-lg-4 col-sm-6">
-                        <a class="portfolio-box" href="img/newborn6.jpg" title="Project Name">
-                            <img class="img-fluid" src="img/newborn6.jpg" alt="..." />
-                            <div class="portfolio-box-caption">
-                               
-                                <div class="project-name">New Born</div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-lg-4 col-sm-6">
-                        <a class="portfolio-box" href="img/newborn1.jpg" title="Project Name">
-                            <img class="img-fluid" src="img/newborn1.jpg" alt="..." />
-                            <div class="portfolio-box-caption">
-                               
-                                <div class="project-name">New Born</div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-lg-4 col-sm-6">
-                        <a class="portfolio-box" href="img/newborn9.jpg" title="Project Name">
-                            <img class="img-fluid" src="img/newborn9.jpg" alt="..." />
-                            <div class="portfolio-box-caption p-3">
-                               
-                                <div class="project-name">New Born</div>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-            </div>
+
+
+
+
+        <!-- Gallery -->
+        
+        <div class="container" id="portfolio">
+            
+            <h2 class="text-center mt-0">Portfolio</h2>
+                    <hr class="divider" />
+
+
+<div class="row">
+    <div class="col-lg-4 col-md-12 mb-4 mb-lg-0">
+      <img data-aos="flip-left"
+        src="img/newborn1.jpg"
+        class="w-100 shadow-1-strong rounded mb-4"
+        alt="Boat on Calm Water"
+      />
+  
+      <img data-aos="flip-left"
+        src="img/newborn6.jpg"
+        class="w-100 shadow-1-strong rounded mb-4"
+        alt="Wintry Mountain Landscape"
+      />
+    </div>
+  
+    <div class="col-lg-4 mb-4 mb-lg-0">
+      <img data-aos="flip-left"
+        src="img/wedding9.jpg"
+        class="w-100 shadow-1-strong rounded mb-4"
+        alt="Mountains in the Clouds"
+      />
+  
+      <img data-aos="flip-left"
+        src="img/wedding5.jpg"
+        class="w-100 shadow-1-strong rounded mb-4"
+        alt="Boat on Calm Water"
+      />
+    </div>
+  
+    <div class="col-lg-4 mb-4 mb-lg-0">
+      <img data-aos="flip-left"
+        src="img/wedding3.jpg"
+        class="w-100 shadow-1-strong rounded mb-4"
+        alt="Waves at Sea"
+      />
+  
+      <img data-aos="flip-left"
+        src="img/newborn8.jpg"
+        class="w-100 shadow-1-strong rounded mb-4"
+        alt="Yosemite National Park"
+      />
+    </div>
+  </div>
+
+
         </div>
-        <!-- Call to action-->
-        <section class="page-section bg-dark text-white container-fluid px-5">
+
+
+        <section class="page-section bg-dark text-white container-fluid px-lg-5 pb-0">
           <div class="row">
             <div class="col-lg-12 d-flex ">
                 <div class="mx-auto px-2 mb-5 w-75">
-                    <h2>FAQ</h2>
-                  <div class="accordion" id="accordionExample">
-                    <div class="accordion-item">
-                      <h2 class="accordion-header" id="headingOne">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-                            Bagaimana cara memesan job foto?
-                        </button>
-                      </h2>
-                      <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample" style="">
-                        <div class="accordion-body">
-                          <p>Kamu bisa memesan dengan menghubungi langsung nomor telepon yang tercantum di contact</p>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="accordion-item">
-                      <h2 class="accordion-header" id="headingTwo">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                          Apakah foto newborn sudah disediakan bajunya
-                        </button>
-                      </h2>
-                      <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
-                        <div class="accordion-body">
-                          <p>Untuk baju sudah disediakan di studio , anda dapat request baju sesaat sudah dipesan</p>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="accordion-item">
-                      <h2 class="accordion-header" id="headingThree">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                          Berapakah harga untuk jasa foto prewedding?
-                        </button>
-                      </h2>
-                      <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
-                        <div class="accordion-body">
-                          <p>Kami tidak dapat memastikan harganya,karena harganya sesuai dengan jumlah foto yang diambil </p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-            </div>
-          </div>
+                  <!--Section: FAQ-->
+<section>
+    <h3 class="text-center mb-4 pb-2 text-primary fw-bold">FAQ</h3>
+    <p class="text-center mb-5">
+      Find the answers for the most frequently asked questions below
+    </p>
+  
+    <div class="row">
+      <div class="col-md-6 col-lg-4 mb-4">
+        <h6 class="mb-3 text-primary"><i class="far fa-paper-plane text-primary pe-2"></i>Bagaimana cara memesan job foto?</h6>
+        <p>
+          Tentunya kamu dapat memesan job foto dengan menghubungi nomor telepon yang tertera
+        </p>
+      </div>
+  
+      <div class="col-md-6 col-lg-4 mb-4">
+        <h6 class="mb-3 text-primary"><i class="fas fa-pen-alt text-primary pe-2"></i>Apakah foto newborn sudah disediakan bajunya ?</h6>
+        <p>
+          <strong><u>Tentu saja</u></strong> kami sudah menyediakan baju untuk buah hati anda dan juga anda dapat memilih sesuka hati baju yang kami sediakan
+        </p>
+      </div>
+  
+      <div class="col-md-6 col-lg-4 mb-4">
+        <h6 class="mb-3 text-primary"><i class="fas fa-user text-primary pe-2"></i> Berapakah harga foto prewedding ?
+        </h6>
+        <p>
+          Harga foto prewedding akan menyesuaikan berapa banyak foto yang kami ambil
+        </p>
+      </div>
+</section>
+<!--Section: FAQ-->
+</div>
+</div>
         </section>
-
         
         <!-- harga -->
 
-        <div class="section container-fluid px-5">
-            <div class="row mt-5 px-5">
-               <div class="col-lg-6">
+        <div class="section container-fluid">
+            <div class="row mt-5 gap-md-0 gap-4 px-5 px-md-0">
+               <div data-aos="fade-right" class="col-md-6">                                                                                                                                                                                                                                                                    
                   <div class="row">
-                     <div class="col-8">
+                     <div class="col-lg-8 col-md-9 col-sm-10">
                         <div class="card h-100">
                            <div class="card-body d-flex flex-column">
                               <img src="./img/newborn1.jpg" class="card-img img-fluid" alt="">
@@ -392,9 +589,10 @@
                      </div>
                   </div>
                </div>
-               <div class="col-lg-6">
+               <div data-aos="fade-left" data-aos-delay="200" 
+               class="col-md-6">
                   <div class="row">
-                     <div class="col-8">
+                     <div class="col-lg-8 col-md-9 col-sm-10">
                         <div class="card h-100">
                            <div class="card-body d-flex flex-column">
                               <img src="img/wedding3.jpg" class="img-fluid card-img" alt="">
@@ -560,5 +758,11 @@
         <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
         <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
         <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+      </script>
     </body>
+
+    
 </html>
